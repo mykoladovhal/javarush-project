@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public class Snake {
     private SnakeDirection direction;
     private boolean isAlive;
-    private ArrayList<SnakeSection> sections;
+    private final ArrayList<SnakeSection> sections;
 
     public Snake(int x, int y) {
-        sections = new ArrayList<SnakeSection>();
+        sections = new ArrayList<>();
         sections.add(new SnakeSection(x, y));
         isAlive = true;
     }
@@ -18,15 +18,11 @@ public class Snake {
     }
 
     public int getX() {
-        return sections.get(0).getX();
+        return sections.getFirst().getX();
     }
 
     public int getY() {
-        return sections.get(0).getY();
-    }
-
-    public SnakeDirection getDirection() {
-        return direction;
+        return sections.getFirst().getY();
     }
 
     public void setDirection(SnakeDirection direction) {
@@ -51,7 +47,7 @@ public class Snake {
     }
 
     private void move(int dx, int dy) {
-        SnakeSection head = sections.get(0);
+        SnakeSection head = sections.getFirst();
         head = new SnakeSection(head.getX() + dx, head.getY() + dy);
 
         checkBorders(head);
@@ -63,12 +59,12 @@ public class Snake {
         Mouse mouse = Room.game.getMouse();
         if (head.getX() == mouse.getX() && head.getY() == mouse.getY())
         {
-            sections.add(0, head);
+            sections.addFirst(head);
             Room.game.eatMouse();
         } else
         {
-            sections.add(0, head);
-            sections.remove(sections.size() - 1);
+            sections.addFirst(head);
+            sections.removeLast();
         }
     }
 

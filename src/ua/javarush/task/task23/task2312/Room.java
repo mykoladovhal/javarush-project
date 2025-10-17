@@ -5,9 +5,9 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 public class Room {
-    private int width;
-    private int height;
-    private Snake snake;
+    private final int width;
+    private final int height;
+    private final Snake snake;
     private Mouse mouse;
 
     public Room(int width, int height, Snake snake) {
@@ -15,10 +15,6 @@ public class Room {
         this.height = height;
         this.snake = snake;
         game = this;
-    }
-
-    public Snake getSnake() {
-        return snake;
     }
 
     public Mouse getMouse() {
@@ -31,18 +27,6 @@ public class Room {
 
     public int getHeight() {
         return height;
-    }
-
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public void setSnake(Snake snake) {
-        this.snake = snake;
     }
 
     public void setMouse(Mouse mouse) {
@@ -79,7 +63,7 @@ public class Room {
     public void print() {
         int[][] matrix = new int[height][width];
 
-        ArrayList<SnakeSection> sections = new ArrayList<SnakeSection>(snake.getSections());
+        ArrayList<SnakeSection> sections = new ArrayList<>(snake.getSections());
         for (SnakeSection snakeSection : sections) {
             matrix[snakeSection.getY()][snakeSection.getX()] = 1;
         }
@@ -121,15 +105,14 @@ public class Room {
         game.run();
     }
 
-    private int initialDelay = 520;
-    private int delayStep = 20;
-
     public void sleep() {
         try {
             int level = snake.getSections().size();
+            int initialDelay = 520;
+            int delayStep = 20;
             int delay = level < 15 ? (initialDelay - delayStep * level) : 200;
             Thread.sleep(delay);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException _) {
         }
     }
 }

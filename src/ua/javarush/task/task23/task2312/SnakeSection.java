@@ -1,8 +1,8 @@
 package ua.javarush.task.task23.task2312;
 
 public class SnakeSection {
-    private int x;
-    private int y;
+    private final int x;
+    private final int y;
 
 
     public SnakeSection(int x, int y) {
@@ -26,9 +26,7 @@ public class SnakeSection {
         SnakeSection that = (SnakeSection) o;
 
         if (x != that.x) return false;
-        if (y != that.y) return false;
-
-        return true;
+        return y == that.y;
     }
 
     @Override
