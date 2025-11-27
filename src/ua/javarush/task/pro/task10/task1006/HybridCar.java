@@ -1,0 +1,9 @@
+package ua.javarush.task.pro.task10.task1006;
+
+public class HybridCar extends Car {
+
+    public HybridCar() {
+        //напишіть тут ваш код
+        super("HybridCar");
+    }
+}

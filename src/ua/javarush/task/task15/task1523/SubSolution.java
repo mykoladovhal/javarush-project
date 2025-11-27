@@ -1,0 +1,15 @@
+package ua.javarush.task.task15.task1523;
+
+public class SubSolution extends Solution{
+    protected SubSolution(int a) {
+        super(a);
+    }
+
+    public SubSolution(String a) {
+        super(a);
+    }
+
+    SubSolution(Double a) {
+        super(a);
+    }
+}
