@@ -6,7 +6,7 @@ package ua.javarush.task.task25.task2505;
 
 public class Solution {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         MyThread myThread = new Solution().new MyThread("super secret key");
         myThread.start();
     }
@@ -17,7 +17,7 @@ public class Solution {
         public MyThread(String secretKey) {
             this.secretKey = secretKey;
             setUncaughtExceptionHandler(new MyUncaughtExceptionHandler());
-            setDaemon(true);
+           // setDaemon(true);
         }
 
         @Override
@@ -26,21 +26,25 @@ public class Solution {
         }
 
         private class MyUncaughtExceptionHandler implements UncaughtExceptionHandler {
-            public MyUncaughtExceptionHandler() {
-                try {
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            }
+
 
             @Override
             public void uncaughtException(Thread t, Throwable e) {
 
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException ex) {
+                    // ignore or log
+                }
+                System.out.println(String.format("%s, %s, %s",
+                        secretKey,
+                        t.getName(),
+                        e.getMessage()));
             }
         }
     }
-
-
 }
+
+
+
 

@@ -1203,8 +1203,30 @@ Caesar cipher.
 
 ## Task 36 - Додаткові завдання
 
-### task3608
-Додаткові складні завдання для закріплення всіх тем.
+### task3608 - MVC Pattern (Model-View-Controller)
+Повноцінна реалізація MVC архітектури для управління користувачами.
+
+**Структура проекту:**
+- **Model** (`MainModel`, `FakeModel`) - Бізнес-логіка та дані
+- **View** (`UsersView`, `EditUserView`) - Відображення даних
+- **Controller** - Координація між Model та View
+- **DAO** (`UserDao`) - Data Access Object для роботи з даними
+- **Service** (`UserService`) - Сервісний шар
+- **Bean** (`User`) - Entity об'єкт користувача
+
+**Функціональність:**
+- Показ всіх активних користувачів
+- Показ видалених користувачів
+- Відкриття форми редагування користувача
+- Зміна даних користувача
+- Видалення користувача
+
+**Ключові концепції:**
+- Розділення відповідальностей (Separation of Concerns)
+- Event-driven архітектура
+- DAO pattern
+- Service Layer pattern
+- MVC pattern
 
 ---
 
@@ -1310,6 +1332,8 @@ Caesar cipher.
 ✅ Proxy  
 ✅ Null Object  
 ✅ Service Locator  
+✅ **MVC (Model-View-Controller)**  
+✅ **DAO (Data Access Object)**
 
 ### Інше
 ✅ equals та hashCode  
