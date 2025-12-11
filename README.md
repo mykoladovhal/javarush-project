@@ -1,5 +1,10 @@
 # JavaRush - Навчальні завдання
 
+[![Java](https://img.shields.io/badge/Java-11+-orange.svg)](https://www.oracle.com/java/)
+[![JavaRush](https://img.shields.io/badge/JavaRush-Course-blue.svg)](https://javarush.com/)
+[![Learning](https://img.shields.io/badge/Status-Learning-brightgreen.svg)]()
+[![Progress](https://img.shields.io/badge/Progress-85%25-success.svg)]()
+
 Цей репозиторій містить виконані завдання з курсу JavaRush. Завдання організовані за рівнями складності та темами.
 
 📋 **[Детальний опис всіх завдань →](README_DETAILED.md)** - повний перелік з описом кожної задачі
